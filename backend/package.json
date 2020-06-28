@@ -13,8 +13,13 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
     "mongoose": "^5.9.20",
+    "mongoose-unique-validator": "^2.0.3",
     "nodemon": "^2.0.4",
     "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.1.4"
+  },
+  "engines": {
+    "node": "10.15"
   }
+
 }
