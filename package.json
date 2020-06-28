@@ -7,6 +7,10 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "10.15.2"
+  }
+,
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,9 +21,5 @@
     "nodemon": "^2.0.4",
     "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.1.4"
-  },
-  "engines": {
-    "node": "10.15"
   }
-
 }

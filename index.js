@@ -41,6 +41,9 @@ mongoose.connect('mongodb://localhost:27017/pizza', err => {
         console.log('Successfully connected to db')
     }
 });
+app.get('/',function(req,res){
+    res.send('hhhhhhey ');
+});
 app.post('/upload', function(req, res) {
     let sampleFile;
     let uploadPath;
