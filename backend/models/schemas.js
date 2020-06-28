@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
-var  Topping= new mongoose.Schema({ name: String });
+//var  Topping= new mongoose.Schema({ name: String });
 const Pizza=mongoose.Schema({
     Name:{
         type:String,
@@ -10,17 +10,19 @@ const Pizza=mongoose.Schema({
         type:String,
         
     },
-    toppings:{
-        type:[Topping],
+    toppings:[String],
         
         
-    }
+    
 });
 const orderedItem= new mongoose.Schema({
     item:{
         type:pizza
     },
-    preferences:[String]
+    quantity:{
+        type:Number,
+        required: true
+    }
 });
 const order= new mongoose.Schema({
     itemslist:{
