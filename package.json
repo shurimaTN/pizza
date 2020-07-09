@@ -4,16 +4,16 @@
   "description": "my pizza api",
   "engines": {
     "node": "12.x"
-  }
-,"main": "index.js",
+  },
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
- 
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
     "mongoose": "^5.9.20",

@@ -5,7 +5,7 @@ const swaggerUi = require('swagger-ui-express');
 const fileUpload = require('express-fileupload');
 const clients = require('./src/clients');
 const pizza = require('./src/Pizza');
-
+var cors = require('cors')
 const mongoose = require('mongoose');
 const swaggerOptions = {
     swaggerDefinition: {
@@ -24,6 +24,15 @@ const swaggerOptions = {
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 const bodyParser = require('body-parser');
+app.use(cors());
+app.options('*', cors());
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+    });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/pizza',pizza);
@@ -34,7 +43,7 @@ app.use(fileUpload({
     createParentPath: true
 }));
 app.use(express.static('./uploads'));
-mongoose.connect('mongodb://localhost:27017/pizza', err => {
+mongoose.connect('mongodb+srv://azer:azer1995@shurima-jjdds.mongodb.net/pizza?retryWrites=true&w=majority', err => {
     if (err) {
         console.log(`Not connected to db ${err}`)
     } else {
@@ -67,7 +76,7 @@ app.post('/upload', function(req, res) {
       res.send('File uploaded to ' + uploadPath);
     });
   });
-app.listen(3003);
+app.listen(1234);
 
 
 module.exports = app;
