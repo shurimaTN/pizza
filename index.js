@@ -76,7 +76,7 @@ app.post('/upload', function(req, res) {
       res.send('File uploaded to ' + uploadPath);
     });
   });
-app.listen(1234);
+app.listen(process.env.PORT ||1234);
 
 
 module.exports = app;
