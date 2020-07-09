@@ -43,7 +43,7 @@ app.use(fileUpload({
     createParentPath: true
 }));
 app.use(express.static('./uploads'));
-mongoose.connect('mongodb+srv://azer:azer1995@shurima-jjdds.mongodb.net/pizza?retryWrites=true&w=majority', err => {
+mongoose.connect('mongodb+srv://azer:azer1995@shurima-jjdds.mongodb.net/pizza?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, err => {
     if (err) {
         console.log(`Not connected to db ${err}`)
     } else {
